@@ -2,7 +2,7 @@
 
 ## Developing
 
-<%= project %> is a static web application. It uses Gulp as a build tool to compile Sass. Gulp also does all the nice things you expect from production-ready code, concatenating and minifying files, prefixing CSS, and optimizing images.
+<%= project %> is a static web page. It uses Gulp as a build tool to prepare files, prefix CSS, and optimize images.
 
 Development dependencies are NPM, Bower, and Gulp.
 
@@ -29,3 +29,6 @@ From there, you can publish to GitHub pages or a webserver.
 ```bash
 git subtree push --prefix dist origin gh-pages
 ```
+
+## To Do
+
