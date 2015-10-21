@@ -52,18 +52,27 @@ gulp.task('html', function(){
     .pipe(gulp.dest('dist'));
 });
 
+// copy over fonts
+gulp.task('fonts', function(){
+  return gulp.src('src/assets/fonts/*')
+    .pipe(gulp.dest('dist/assets/fonts'));
+});
+
 // clean out dist, in case sources have been removed
 gulp.task('clean', require('del').bind(null, ['dist/assets', 'dist/js']));
 
 gulp.task('watch', function(){
   gulp.watch('src/js/*.js', ['javascript', reload]);
   gulp.watch('src/scss/*.scss', ['sass', reload]);
+  gulp.watch('src/assets/fonts/*', ['fonts', reload]);
+  gulp.watch('src/assets/img/**/*', ['images', reload]);
   gulp.watch('src/*.html', ['html', reload]);
 });
 
 // executing tasks from the dependency array is preferred
-gulp.task('build', ['javascript', 'sass', 'html'], function(){
-  return gulp.src('dist/**/*').pipe(gp.size({ title: 'build', gzip: true }));
+gulp.task('build', ['javascript', 'sass', 'images', 'fonts', 'html'], function(){
+  return gulp.src('dist/**/*')
+  .pipe(gp.size({ title: 'build', gzip: true }));
 });
 
 // start browsersync, start watch task to watch for changes
