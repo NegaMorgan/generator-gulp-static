@@ -1,4 +1,4 @@
-# generator-gulp-static [![Build Status](https://secure.travis-ci.org/negamorgan/generator-gulp-static.png?branch=master)](https://travis-ci.org/negamorgan/generator-gulp-static)
+# generator-gulp-static 
 
 > [Yeoman](http://yeoman.io) generator
 
